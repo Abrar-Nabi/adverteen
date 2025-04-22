@@ -1,0 +1,16 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 20px;
+    background: transparent;
+    z-index: 1000; /* Ensures it stays on top */
+  }
+  
+  .logo {
+    height: 50px; /* Adjust as needed */
+ 
+  };
+  
+  

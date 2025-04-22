@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&display=swap");
+
+.home-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* Prevent scrollbars */
+    flex-direction: column;
+}
+
+.bold-text {
+    font-family: "Noto Sans Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 6vw;
+    line-height: 1.2;
+    color: #333;
+    border-radius: 10px;
+    padding: 20px 216px;
+    
+}
+
+/* Floating Words */
+.floating-word {
+    position: absolute;
+    font-size: clamp(0.8rem, 1rem, 1.2rem); /* Responsive word size */
+    color: rgb(0, 0, 0);
+    padding: 5px 12px;
+    border-radius: 20px;
+    white-space: nowrap;
+    z-index: 3;
+    transform-origin: center;
+    display: inline-block;
+
+    /* Falling animation */
+    animation: fallDown 2s cubic-bezier(0.3, 1.5, 0.5, 1) forwards;
+}
+
+/* Realistic falling effect */
+@keyframes fallDown {
+    0% {
+        transform: translateY(-150vh) rotate(0deg); /* Starts WAY above the screen */
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+    90% {
+        transform: translateY(5px) rotate(var(--rotation)); /* Slight overshoot */
+    }
+    100% {
+        transform: translateY(0) rotate(var(--rotation)); /* Final position */
+    }
+}
+
+
+/* Button Styling */
+.see-plans-btn {
+    margin-top: 20px;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: #fe7911;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.see-plans-btn:hover {
+    background-color: #b96a2ed1;
+}
+
+/* Terms and Conditions Link */
+.terms-btn {
+    border: none;
+    background: none;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #555;
+    text-decoration: none;
+}
+
+.terms-btn:hover {
+    border: none;
+    text-decoration: underline;
+}
+
+
+/* Positioning Each Word */
+.marketing {
+    background-color: #ffcb00;
+    top: 26vh;
+    left: 60vw;
+    --rotation: -8deg;
+    animation-delay: 0.2s;
+}
+.seo {
+    background-color: #ff1300;
+    top: 44vh;
+    left: 50vw;
+    --rotation: 10deg;
+    animation-delay: 0.4s;
+}
+.content {
+    background-color: #fe7911;
+    top: 61vh;
+    left: 30vw;
+    --rotation: -8deg;
+    animation-delay: 0.6s;
+}
+
+.ads {
+    background-color: #00d8ff;
+    top: 58vh;
+    left: 62vw;
+    --rotation: 12deg;
+    animation-delay: 0.8s;
+}
+
+/* 📱 Responsive Adjustments for Small Screens */
+@media (max-width: 768px) {
+
+    .home-container {
+        
+        height: 100%;
+        width: 100%;
+       
+    }
+    .bold-text {
+        font-size: 18vw;
+        padding: 100px 20PX 20px;
+        margin: 0px;
+    }
+    .floating-word {
+        font-size: 0.8rem; /* Make words smaller on mobile */
+    }
+
+    .marketing {
+        top: 19vh;
+        left: 50vw;
+    }
+    .seo {
+        top: 33vh;
+        left: 42vw;
+    }
+    .content {
+        top: 49vh;
+        left: 25vw;
+    }
+    .ads {
+        top: 72vh;
+        left: 87vw;
+    }
+    .see-plans-btn {
+        /* width: 80%; */
+        padding: 14px 45px;
+    }
+
+    .terms {
+        font-size: 0.9rem;
+    }
+}
